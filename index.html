@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字无缝滚动</title>
+    <style>
+        div,ul,li{padding:0;margin:0;}
+        li{list-style:none;}
+        #js_scroll_left{white-space:nowrap;  width:300px; height:30px; line-height:30px; background:#ea4c89; overflow:hidden;}
+        #js_scroll_left ul{ display:inline; }
+        #js_scroll_left ul li{ display:inline; margin:0 10px; font-size:14px; color:#fff; }
+
+        #js_scroll_top{ width:100px; height:100px; line-height:30px; background:#ffd200; overflow:hidden; padding:10px; margin:50px 0 0;}
+        #js_scroll_top ul{  }
+        #js_scroll_top ul li{ font-size:14px; color:#262a2d; }
+    </style>
+</head>
+<body>
+    <div id="js_scroll_left">
+        <ul>
+            <li>我是滚动文字！</li>
+            <li>我是滚动文字！</li>
+            <li>我是滚动文字！</li>
+        </ul>
+    </div>
+    <div id="js_scroll_top">
+        <ul>
+            <li>我是滚动文字！</li>
+            <li>我是滚动文字！</li>
+            <li>我是滚动文字！</li>
+            <li>我是滚动文字！</li>
+        </ul>
+    </div>
+<script type="text/javascript" src="js/scrollFn.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        var scrollObj01 = document.getElementById("js_scroll_left");
+        scrollObj01.scrollLeft =
+        scroll({
+            obj:scrollObj01,
+            direction:"left",
+            ele:"ul",
+            time:50
+        });
+        var scrollObj02 = document.getElementById("js_scroll_top");
+        scroll({
+            obj:scrollObj02,
+            direction:"top",
+            ele:"ul",
+            time:50
+        });
+    }
+</script>
+</body>
+</html>
